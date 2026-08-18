@@ -38,9 +38,9 @@ Emails can also be cancelled while they are still eligible for cancellation.
 
 ---
 
-Architecture
+                         Architecture
 
-┌──────────────────────┐
+                    ┌──────────────────────┐
                     │    React + Vite      │
                     │      Frontend        │
                     └──────────┬───────────┘
