@@ -1,0 +1,25 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Email {
+  id              String   @id @default(uuid())
+  to              String
+  subject         String
+  body            String
+  status          String   @default("SCHEDULED") // SCHEDULED, PROCESSING, SENT, FAILED, CANCELLED
+  scheduledAt     DateTime
+  sentAt          DateTime?
+  previewUrl      String?
+  errorMessage    String?
+  retries         Int      @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
